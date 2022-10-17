@@ -8,16 +8,14 @@ const babelConfig = {
   plugins: [
     "@babel/plugin-transform-runtime",
     "react-hot-loader/babel",
-    // [
-    //   "import",
-    //   {
-    //     libraryName: "sugar-design",
-    //     camel2DashComponentName: false,
-    //     customName,
-    //     "style":true
-    //   },
-    //   "sugar",
-    // ],
+    [
+      "import",
+      {
+        libraryName: "sugar-design",
+        camel2DashComponentName: false,
+        customName,
+      },
+    ],
   ],
 };
 module.exports = babelConfig;

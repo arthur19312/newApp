@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "jsx": "preserve",
+    "strict": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noEmit": false,
+    "isolatedModules": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true,
+    "experimentalDecorators": true,
+    // "types": [
+    //   "jest"
+    // ],
+    "rootDir": "/",
+    "outDir": "dist/",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@*": [
+        "src/*"
+      ],
+      "@SDVariableJS": [
+        "node_modules/sugar-design/foundation/variable.ts"
+      ],
+      "@SDFoundation": [
+        "node_modules/sugar-design/foundation/foundation.ts"
+      ],
+    },
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tslint-config-prettier"
+  ]
+}

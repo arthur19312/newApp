@@ -2,16 +2,13 @@
 var path = require("path");
 const rootResolve = (name) => path.resolve(__dirname, name);
 
-const cssReg = /\.css$/;
-const cssModuleReg = /\.module\.css$/;
 const lessRegex = /(\.module)?\.css|less$/;
-const lessModuleRegex = /\.module\.less$/;
 
 module.exports = {
   entry: [
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://0.0.0.0:3000",
-    "./src/index.jsx",
+    "./src/index.js",
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -32,15 +29,24 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js|jsx$/,
-        exclude: path.resolve(__dirname, "node_modules"),
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/preset-env"],
-        },
+        test: /\.(js|jsx|ts|tsx)$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-react",
+                "@babel/preset-typescript",
+              ],
+              cacheDirectory: true,
+            },
+          },
+        ],
+        include: [rootResolve("./src")],
       },
       {
-        test: lessRegex,
+        test: /(\.module)?\.css|less$/,
         exclude: path.resolve(__dirname, "node_modules"),
         use: [
           {
@@ -66,6 +72,11 @@ module.exports = {
         ],
       },
       {
+        test: /.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+        include: [path.resolve(__dirname, "node_modules")],
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif|eot|woff2?|ttf)$/i,
         type: "asset",
         generator: {
@@ -75,7 +86,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {
       "react-dom": "@hot-loader/react-dom",
       "@": rootResolve("./src"),
@@ -93,5 +104,4 @@ module.exports = {
       ),
     },
   },
-  //   plugins: [new webpack.HotModuleReplacementPlugin()],
 };
