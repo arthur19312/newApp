@@ -1,0 +1,72 @@
+@import '~@SDVariable';
+
+
+.info {
+    margin-bottom: 2rem;
+}
+
+.infoTitle {
+    .heading60();
+    color: @n50;
+}
+
+.infoContent {
+    margin-top: @spacing12;
+    min-height: 40px;
+    max-height: 300px;
+    overflow: auto;
+    font-size: @spacing16;
+}
+
+
+.editIcon {
+    padding-left: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        color: @b50;
+    }
+}
+
+.tabs {
+    margin-top: 0;
+}
+
+.content {
+    padding-top: @spacing08;
+}
+
+.header {
+    &::after {
+        content: none !important;
+    }
+}
+
+.code {
+    line-height: 40px;
+}
+
+.wrap {
+    white-space: pre-wrap;
+}
+
+.startButton {
+    background-color: @g60  !important;
+    border: 1px @g60 solid !important;
+
+    &:hover,
+    :active {
+        background-color: @g70;
+        border: 1px @g70 solid;
+    }
+
+    &:visited,
+    :checked,
+    :enabled,
+    :link,
+    :focus {
+        background-color: @g60;
+        border: 1px @g60 solid;
+    }
+
+}

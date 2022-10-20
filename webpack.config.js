@@ -24,6 +24,12 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: true,
+    // proxy: {
+    //   "/api": {
+    //     target: "https://hcm-staging-20.mokahr.com",
+    //     changeOrigin: true,
+    //   },
+    // },
   },
   mode: "development",
   module: {

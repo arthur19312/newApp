@@ -6,4 +6,7 @@ export interface RequestType {
   size: string;
   duration: string;
   time: string;
+  reqBody: string;
+  resBody: string;
+  mockStatus: number;
 }

@@ -1,0 +1,59 @@
+@import '~@SDVariable';
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 200px;
+    animation: splash 2s ease-in-out infinite;
+}
+
+@keyframes splash {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+// .triangle {
+//     width: 0;
+//     height: 0;
+// }
+
+// .left {
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 1;
+//     .triangle();
+//     border-left: 80px solid transparent;
+//     border-right: 80px solid transparent;
+//     border-top: 0px solid transparent;
+//     border-bottom: 180px solid @n30;
+// }
+
+
+// .right {
+//     position: absolute;
+//     bottom: 0;
+//     left: 90px;
+//     z-index: 2;
+//     .triangle();
+//     border-left: 100px solid transparent;
+//     border-right: 120px solid transparent;
+//     border-top: 0px solid transparent;
+//     border-bottom: 220px solid @b30;
+// }
