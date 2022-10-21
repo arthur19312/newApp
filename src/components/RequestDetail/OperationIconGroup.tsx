@@ -34,33 +34,33 @@ const OperationIconGroup = ({
 
   return (
     <Spacing stretched spacing={32}>
+      {!isEdit &&
+        (status ? (
+          <Button
+            type="danger"
+            rightIcon="substractCircleAlt"
+            onClick={() => {
+              stopMockFn();
+              setStatus(!status);
+            }}
+          >
+            停止 Mock
+          </Button>
+        ) : (
+          <Button
+            className={styles.startButton}
+            type="primary"
+            rightIcon="caretRight"
+            onClick={() => {
+              submitMock();
+              setStatus(!status);
+            }}
+          >
+            启用 Mock
+          </Button>
+        ))}
       {isEdit ? (
         <Spacing spacing={16}>
-          {!isEdit &&
-            (status ? (
-              <Button
-                type="danger"
-                rightIcon="substractCircleAlt"
-                onClick={() => {
-                  stopMockFn();
-                  setStatus(!status);
-                }}
-              >
-                停止 Mock
-              </Button>
-            ) : (
-              <Button
-                className={styles.startButton}
-                type="primary"
-                rightIcon="caretRight"
-                onClick={() => {
-                  submitMock();
-                  setStatus(!status);
-                }}
-              >
-                启用 Mock
-              </Button>
-            ))}
           <Button
             type="primary"
             rightIcon="save"
